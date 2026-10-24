@@ -9,7 +9,7 @@ wrong that forecast has been?*
 It uses two public Elexon datasets only — **WINDFOR** (hourly wind forecast vintages) and
 **FUELHH** (half-hourly metered wind output) — for a fixed **January 2026** delivery window.
 
-[Repository](https://github.com/Manish881-hub/Energy-Evaluation) · [Method](docs/methodology.md) · [Demo script](docs/demo-script.md)
+[Live demo](https://energy-evaluation.vercel.app) · [Repository](https://github.com/Manish881-hub/Energy-Evaluation) · [Method](docs/methodology.md) · [Demo script](docs/demo-script.md)
 
 | Decision desk | Forecast quality |
 | --- | --- |
@@ -183,8 +183,14 @@ The image builds the SPA in a Node stage, then serves it and the API from Python
 
 ### Vercel
 
+Live: **https://energy-evaluation.vercel.app**
+
 `vercel.json` builds `frontend/` to static output and exposes `api/index.py` as a Python 3.12
-function, with `backend/**` included. Import the repo in Vercel, or:
+function, with `backend/**` included. The API rewrite carries the original endpoint so FastAPI sees
+the same `/api/...` path in production as it does locally.
+
+Import the **repository root** in Vercel (not the `frontend/` directory), leave Root Directory as
+`./`, and choose the **Other** preset. Do not override the build settings. Or deploy from the CLI:
 
 ```bash
 npx vercel deploy            # logged-in account
