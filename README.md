@@ -110,6 +110,13 @@ docker compose up --build
 # http://localhost:8000
 ```
 
+If port 8000 is already in use:
+
+```bash
+PORT=8010 docker compose up --build
+# http://localhost:8010
+```
+
 ### Two processes
 
 ```bash
