@@ -1,0 +1,31 @@
+{
+  "fetched_at": "2026-10-24T04:12:04Z",
+  "window": {
+    "start": "2026-01-01",
+    "end": "2026-01-31",
+    "label": "January 2026 delivery"
+  },
+  "counts": {
+    "actual_half_hours": 1488,
+    "forecast_hours": 744,
+    "forecast_rows": 11873,
+    "publish_vintages": 264
+  },
+  "sources": {
+    "actuals": {
+      "dataset": "FUELHH",
+      "filter": "fuelType=WIND",
+      "url": "https://bmrs.elexon.co.uk/api-documentation/endpoint/datasets/FUELHH/stream"
+    },
+    "forecasts": {
+      "dataset": "WINDFOR",
+      "url": "https://bmrs.elexon.co.uk/api-documentation/endpoint/datasets/WINDFOR/stream",
+      "max_horizon_hours": 48
+    }
+  },
+  "notes": [
+    "Actuals keep the latest FUELHH revision per settlement period.",
+    "Forecasts keep every WINDFOR vintage for reproducibility.",
+    "WINDFOR is hourly; the analysis applies each hour to both settlement periods."
+  ]
+}
